@@ -1,11 +1,16 @@
 export interface ApiMeal {
   title: string;
-  MealTime: string;
-  calories: number;
+  mealTime: string;
+  calories: string;
 }
 
-export interface MealMutation {
+export interface Meal {
+  id: string;
   title: string;
   mealTime: string;
-  calories: number;
+  calories: string;
+}
+
+export interface ApiMealsList {
+  [id: string]: ApiMeal;
 }
