@@ -10,7 +10,7 @@ const NavBar = () => {
         <ul className="navbar-nav d-flex flex-row gap-3 flex-nowrap">
           <li className="nav-item">
             <NavLink to="/" className="nav-link">
-              Home
+              Meals
             </NavLink>
           </li>
           <li className="nav-item">

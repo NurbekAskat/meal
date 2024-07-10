@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { ApiMeal } from '../../types';
 import { NavLink } from 'react-router-dom';
 
-
 interface Props {
   onSubmit: (meal: ApiMeal) => void;
   existingMeal?: ApiMeal;
@@ -15,7 +14,7 @@ const emptyState: ApiMeal = {
 };
 
 const MealForm: React.FC<Props> = ({ onSubmit, existingMeal }) => {
-  const [mealMutation, setMealMutation] = useState(emptyState);
+  const [mealMutation, setMealMutation] = useState<ApiMeal>(emptyState);
 
   const initialState: ApiMeal = existingMeal ? existingMeal : emptyState;
 
@@ -86,7 +85,7 @@ const MealForm: React.FC<Props> = ({ onSubmit, existingMeal }) => {
       </button>
       <button className="btn btn-danger mt-2 ms-2">
         <NavLink to={`/`} className="nav-link">
-          back
+          Back
         </NavLink>
       </button>
     </form>

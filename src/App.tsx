@@ -6,7 +6,6 @@ import { useCallback, useEffect, useState } from 'react';
 import { ApiMealsList, Meal } from './types';
 import axiosApi from './axiosApi';
 
-
 function App() {
   const [meals, setMeals] = useState<Meal[]>([]);
   const [loading, setLoading] = useState(false);
@@ -55,12 +54,20 @@ function App() {
       <NavBar />
       <div className="container">
         <Routes>
-          <Route path="/" element={<Home meals={meals} mealsLoading={loading} deleteMeal={deleteMeal} />} />
+          <Route
+            path="/"
+            element={
+              <Home
+                meals={meals}
+                mealsLoading={loading}
+                deleteMeal={deleteMeal}
+              />
+            }
+          />
           <Route path="/meals/:action/:id" element={<MutateMeal />} />
         </Routes>
       </div>
     </>
-
   );
 }
 

@@ -20,7 +20,7 @@ const MutateMeal = () => {
     navigate('/');
   };
 
-  const {  id } = useParams();
+  const { id } = useParams();
 
   const fetchOneMeal = useCallback(async () => {
     const { data: meal } = await axiosApi.get<ApiMeal | null>(
@@ -41,12 +41,14 @@ const MutateMeal = () => {
     void fetchOneMeal();
   }, [fetchOneMeal]);
 
-
   return (
     <div className="row mt-2">
       <div className="col">
-        {id === 'newMeal' ?
-          (<MealForm onSubmit={createMeal} />) : (<MealForm onSubmit={updateDish} existingMeal={meal} />)}
+        {id === 'newMeal' ? (
+          <MealForm onSubmit={createMeal} />
+        ) : (
+          <MealForm onSubmit={updateDish} existingMeal={meal} />
+        )}
       </div>
     </div>
   );

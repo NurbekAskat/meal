@@ -20,9 +20,7 @@ const MealItem: React.FC<Props> = ({ meal, onDelete }) => {
               Delete
             </button>
             <NavLink to={`/meals/edit/${meal.id}`} className="nav-link">
-              <button className="btn btn-primary">
-                Edit
-              </button>
+              <button className="btn btn-primary">Edit</button>
             </NavLink>
           </p>
         </div>

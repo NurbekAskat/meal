@@ -9,11 +9,7 @@ interface Props {
   deleteMeal: (id: string) => void;
 }
 
-const Home: React.FC<Props> = ({
-                                 mealsLoading,
-                                 meals,
-                                 deleteMeal,
-                               }) => {
+const Home: React.FC<Props> = ({ mealsLoading, meals, deleteMeal }) => {
   return (
     <div className="row mt-2">
       <div className="col-7">
@@ -30,10 +26,7 @@ const Home: React.FC<Props> = ({
             <CircularProgress />
           </Box>
         ) : (
-          <Meals
-            meals={meals}
-            deleteMeal={deleteMeal}
-          />
+          <Meals meals={meals} deleteMeal={deleteMeal} />
         )}
       </div>
     </div>
